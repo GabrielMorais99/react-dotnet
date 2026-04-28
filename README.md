@@ -26,6 +26,8 @@ Em dois terminais:
 
 Abra o endereço do Vite (geralmente `http://localhost:5173`). A página chama `GET /api/v1/hello` via proxy.
 
+Com a API rodando em **Development**, documentação Swagger UI: `http://localhost:5208/swagger` (HTTPS: `https://localhost:7030/swagger` conforme seu perfil).
+
 ### Build
 
 ```bash
