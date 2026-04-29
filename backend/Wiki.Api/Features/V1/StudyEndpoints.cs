@@ -9,10 +9,10 @@ public static class StudyEndpoints
 
         group.MapGet("/workflow", () =>
             Results.Ok(new StudyWorkflowResponse(
-                Title: "Roadmap para sênior C# + React",
-                Description: "Um plano prático para estudar backend .NET, React, arquitetura, microsserviços, mensageria, observabilidade, cloud e liderança técnica.",
+                Title: "Wiki C#/.NET + React",
+                Description: "Base de consulta para entender conceitos, relações e fluxos de backend .NET, React, arquitetura, microsserviços, mensageria, observabilidade, cloud e liderança técnica.",
                 WeeklyFocusHours: 10,
-                TargetRole: "Desenvolvedor Sênior C#/.NET + React",
+                TargetRole: "Referência técnica C#/.NET + React",
                 Tracks:
                 [
                     new StudyTrackResponse(
