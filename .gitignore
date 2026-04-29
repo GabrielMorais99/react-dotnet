@@ -9,6 +9,7 @@ obj/
 ## Node / frontend
 frontend/node_modules/
 frontend/dist/
+frontend/dist-verify/
 *.local
 .env
 .env.*.local

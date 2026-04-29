@@ -44,5 +44,6 @@ app.UseCors();
 app.UseHttpsRedirection();
 
 app.MapSystemEndpointsV1();
+app.MapStudyEndpointsV1();
 
 app.Run();
