@@ -41,9 +41,16 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors();
-app.UseHttpsRedirection();
+
+var hasHttpsPort = !string.IsNullOrWhiteSpace(app.Configuration["HTTPS_PORT"])
+                   || !string.IsNullOrWhiteSpace(app.Configuration["ASPNETCORE_HTTPS_PORT"]);
+
+if (app.Environment.IsDevelopment() || hasHttpsPort)
+{
+    app.UseHttpsRedirection();
+}
 
 app.MapSystemEndpointsV1();
-app.MapStudyEndpointsV1();
+app.MapReferenceEndpointsV1();
 
 app.Run();

@@ -114,6 +114,7 @@
 .status-strip strong {
   color: #ffffff;
   margin-left: 12px;
+  overflow-wrap: anywhere;
   text-align: right;
 }
 
@@ -204,9 +205,68 @@
 }
 
 .track-list,
-.topic-link-list {
+.topic-link-list,
+.category-links,
+.knowledge-link-grid,
+.related-page-list,
+.map-page-list {
   display: grid;
   gap: 8px;
+}
+
+.category-links {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+}
+
+.category-links a,
+.knowledge-link-grid a,
+.related-page-link {
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  display: grid;
+  gap: 3px;
+  padding: 12px;
+  text-decoration: none;
+  transition:
+    background 140ms ease,
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.category-links a:hover,
+.knowledge-link-grid a:hover,
+.related-page-link:hover {
+  background: #ffffff;
+  border-color: #67e8f9;
+  box-shadow: inset 3px 0 0 #0891b2;
+}
+
+.category-links span,
+.knowledge-link-grid span,
+.related-page-link span {
+  color: var(--muted-strong);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.category-links strong,
+.knowledge-link-grid strong,
+.related-page-link strong {
+  color: var(--text-strong);
+  line-height: 1.25;
+}
+
+.knowledge-link-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.knowledge-link-grid small {
+  color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .track-tab,
@@ -388,6 +448,17 @@
   margin-top: 8px;
 }
 
+.related-page-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.related-page-link {
+  cursor: pointer;
+  font: inherit;
+  min-height: 74px;
+  text-align: left;
+}
+
 .notes-panel {
   display: grid;
   gap: 16px;
@@ -525,6 +596,29 @@ a:focus-visible {
   margin-top: 8px;
 }
 
+.map-page-list {
+  align-content: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 4px;
+}
+
+.map-page-list button {
+  background: #f1f5f9;
+  border: 1px solid #dbe4ee;
+  border-radius: 8px;
+  color: #1e3a4a;
+  font-size: 0.9rem;
+  font-weight: 750;
+  min-height: 38px;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.map-page-list button:hover {
+  background: #ecfeff;
+  border-color: #67e8f9;
+}
+
 .loading-state {
   margin-top: 20px;
 }
@@ -651,7 +745,10 @@ a:focus-visible {
 
   .wiki-layout,
   .overview-grid,
-  .reference-grid {
+  .reference-grid,
+  .knowledge-link-grid,
+  .related-page-list,
+  .map-page-list {
     grid-template-columns: 1fr;
   }
 
